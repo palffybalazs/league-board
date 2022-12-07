@@ -6,22 +6,31 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Installation
+The project should be good to run after cloning it into a new folder. Can be reached on localhost:4200, and contains to my backend application implemented during this semester.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Main components of the projetct
+Modules </br>
+1. App components, gives the base of the project. Contains the router to other modules and also a basic navbar html, which appears on all pages.
+2. TeamGroups, listing the groups, contains:
+      * html and css format
+      * services for get post update delete requests
+      * teamgroup class/module
+      * detailed group format, for printing the teams in the groups
+3. Teams, listing the groups, contains:
+      * html and css format
+      * services for get post update delete requests
+      * team class/module
+      * detailed tream format, for printing the players in the given team
+4. Players, listing the players:
+      * html and css format
+      * services for get post update delete requests
+      * player class/module
+5. Form
+      * html and css format
+      * uses already implemented services
+      * add teamgroup, update team, remove player requests are implemented to show one from each
+6. Home
+      * html and css format
+      * simple welcome page with background pic
