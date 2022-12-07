@@ -58,12 +58,18 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "league-board:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
+
           "configurations": {
             "production": {
               "browserTarget": "league-board:build:production"
             },
             "development": {
-              "browserTarget": "league-board:build:development"
+              "browserTarget": "league-board:build:development",
+              "proxyConfig": "src/proxy.config.json"
             }
           },
           "defaultConfiguration": "development"

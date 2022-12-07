@@ -1,0 +1,15 @@
+<table class="styled-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Points</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let team of teams">
+    <td>{{ team.name }}</td>
+    <td>{{ team.points }}</td>
+  </tr>
+  <!-- and so on... -->
+  </tbody>
+</table>

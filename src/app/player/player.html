@@ -1,0 +1,24 @@
+<table class="styled-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Goals</th>
+    <th>Assists</th>
+    <th>Yellow cards</th>
+    <th>Red cards</th>
+    <th>Profile picture</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let player of players">
+    <td>{{ player.name }}</td>
+    <td>{{ player.goals }}</td>
+    <td>{{ player.assists }}</td>
+    <td>{{ player.yellow_cards }}</td>
+    <td>{{ player.red_cards }}</td>
+    <img src="{{ player.picture }}" alt="player image" width="50" height="50">
+  </tr>
+
+  </tbody>
+</table>
