@@ -60,7 +60,9 @@ export class FormComponent implements OnInit {
     var teamid = Number(this.PutTeam.controls['teamid'].value);
     var teamname = this.PutTeam.controls['newteamname'].value;
 
-    this.teamService.updateTeam(teamid,teamname).subscribe(
+
+    var team = new Team(teamid,teamname, undefined);
+    this.teamService.updateTeam(team).subscribe(
       (response: Team[]) => {
         console.log(response);
       }

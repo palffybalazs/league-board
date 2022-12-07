@@ -1,7 +1,7 @@
 import{Team} from './team';
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable, retry} from "rxjs";
 import {environment} from "../../environments/environment";
 
 @Injectable({
@@ -23,11 +23,16 @@ export class TeamService {
     return this.http.get<Team[]>(`${this.apiServerUrl}/teams/group/${groupId}`);
   }
 
-  public updateTeam(teamid: number, newteamname: string | null): Observable<Team[]> {
-    console.log(teamid);
-    console.log(newteamname);
-    newteamname = "test";
-    return this.http.put<Team[]>(`${this.apiServerUrl}/teams/update/${teamid}`, newteamname);
+  public updateTeam(team: Team): Observable<Team[]> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    var tmp = JSON.stringify(team);
+    console.log(tmp);
+    return this.http.put<Team[]>(`${this.apiServerUrl}/teams/update/${team.id}`, tmp, {headers: headers}).pipe(
+      retry(2)
+    );
   }
 
   public deleteTeam(teamId: number): Observable<void> {

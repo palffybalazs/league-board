@@ -12,25 +12,6 @@
 
 </form>
 
-<form [formGroup]="PutTeam" (ngSubmit)="onSubmitTeam()">
-  <h3>Update Team Form</h3>
-  <div>
-    <label for="Name2">
-      Team Id
-    </label>
-    <input id="name2" type="text" formControlName="teamid">
-  </div>
-  <div>
-    <label for="Name3">
-      New Team name
-    </label>
-    <input id="name3" type="text" formControlName="newteamname">
-  </div>
-
-  <button class="button" type="submit">Submit</button>
-
-</form>
-
 <form [formGroup]="RemovePlayer" (ngSubmit)="onSubmitPlayer()">
   <h3>Remove Player Form</h3>
   <div>
